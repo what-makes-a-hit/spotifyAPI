@@ -42,4 +42,24 @@ print(response_list)
 response_list = compiledAPIcall
 
 results_df = pd.DataFrame(response_list)
-print(results_df.head())
+pd.options.display.max_columns = None
+pd.options.display.max_rows = None
+pd.options.display.max_seq_items = None
+#pprint(results_df.head())
+#results_df.drop(['response'], axis=1)
+danceability = [item["danceability"] for  item in attributesObject ]
+results_df['danceability'] = danceability
+
+#results_df.drop(index='response', level=1)
+pprint(results_df.head())
+ind = []
+for i in range(100):
+    ind.append(i)
+
+
+#df['A'].corr(df['B'])
+results_df['position'] = ind
+corr = results_df['danceability'].corr(results_df['position'])
+print(corr)
+#pprint(results_df.head())
+
