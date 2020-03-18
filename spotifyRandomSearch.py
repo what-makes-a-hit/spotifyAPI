@@ -31,7 +31,7 @@ def getRandomSearch():
       randomCharacter = random.choice(characters)
 
       #create a search query string
-      randomSearch = '';
+      randomSearch = ''
 
       #toss a coin
       coin = [0,1]
@@ -45,7 +45,7 @@ def getRandomSearch():
           randomSearch = '%' + randomCharacter + '%'
 
 
-      return randomSearch;
+      return randomSearch
 
 # pick a number randomly less than 10000 as an offset
 
@@ -60,9 +60,10 @@ for i in range(40):
       #print(offset)
 
       url = 'https://api.spotify.com/v1/search?q=' + str(query) +  '&offset=' +str(offset) + '&type=track'
-      #print(url)
-      headers = {'Accept': 'application/json', 'Content-Type' : 'application/json','Authorization': 'Bearer BQA_F07sLAZmp3F5Bd3mbSgA_uuEatr4p5NiUMgrp8VjEOWN-ZxKtidO2P7XOCgEv7UI4PbkA9D3wo_gEhNCvnUak33Wh1p5IowBmWP0JRjByFgVXE9Q3bHhF2Rf5qcA0ZqK6OG01dQ'}
+      print(url)
+      headers = {'Accept': 'application/json', 'Content-Type' : 'application/json','Authorization': 'Bearer BQAViQRE_MCBe3q1ORbgoomCwhbXxGoEWYT0fV7L588mtItJ_dVeRnRXjjC9O5Ape_0sFchd2zOhEzM0Pi3jVXy5-UBV2McrJ-YvhOIO_o9FANGPAWtfYYuXCF4dYN68ysSstulDkqr0Am0SLVQwEVQoLUvMk4H-4ThCzRytKkOuteP9QOp9b0WOG841ilSmNyHMRQspZGVjX_NdAl7IKguQirZcg-MIUCkdkO5ku0CqsYnH3BqnWtaPAMX3M3T__L463CNe'}
       req = requests.get(url, headers=headers)
+      print(req)
       jreq = req.json()
       id = jreq['tracks']['items'][0]['id']
       name = jreq['tracks']['items'][0]['name']
