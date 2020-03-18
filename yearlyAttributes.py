@@ -1,13 +1,10 @@
 # Dependencies and Setup
+
+import pandas as pd
+
+import matplotlib.pyplot as plt
 import numpy as np
 
-import json
-import time
-
-import requests
-import pandas as pd
-from pandas.io.json import json_normalize
-from pprint import pprint
 
 yearlyAttributes = {
 
@@ -8034,7 +8031,7 @@ yearlyAttributes = {
                                    'id': '5edioRF5SIeNzZafgd1Py1', 'uri': 'spotify:track:5edioRF5SIeNzZafgd1Py1',
                                    'track_href': 'https://api.spotify.com/v1/tracks/5edioRF5SIeNzZafgd1Py1',
                                    'analysis_url': 'https://api.spotify.com/v1/audio-analysis/5edioRF5SIeNzZafgd1Py1',
-                                   'duration_ms': 279413, 'time_signature': 4}}]
+                                   'duration_ms': 279413, 'time_signature': 4}}],
 
 
     'zeroNine': [{'track_name': 'Breathe', 'track_id': '3y4LxiYMgDl4RethdzpmNe',
@@ -15095,7 +15092,7 @@ yearlyAttributes = {
                                 'id': '3E8eSqBoqLs8ELbrK3NJHs', 'uri': 'spotify:track:3E8eSqBoqLs8ELbrK3NJHs',
                                 'track_href': 'https://api.spotify.com/v1/tracks/3E8eSqBoqLs8ELbrK3NJHs',
                                 'analysis_url': 'https://api.spotify.com/v1/audio-analysis/3E8eSqBoqLs8ELbrK3NJHs',
-                                'duration_ms': 237347, 'time_signature': 4}}]
+                                'duration_ms': 237347, 'time_signature': 4}}],
 
     'zero': [{'track_name': 'Breathe', 'track_id': '3y4LxiYMgDl4RethdzpmNe',
               'response': {'danceability': 0.529, 'energy': 0.496, 'key': 7, 'loudness': -9.007, 'mode': 1,
@@ -15992,3 +15989,223 @@ playlists = {"oneHundredRandom": [{'La Modelo': '2SbzdGpOKlH3HIAGTWTbwU'}, {'Bab
 
 "getRandomSpotifySong"  : [{'Beautiful Day': '1VuBmEauSZywQVtqbxNqka'}, {'Upside Down': '6shRGWCtBUOPFLFTTqXZIC'}, {'Until the Day I Die': '0DKNNR9iDjwfCEpMiFXMJq'}, {'Dear Future Self (Hands Up)': '1tm4Bl2E5RwTevOiBs4gtH'}, {'We Stayed Up All Night': '7eSWgAlmLPXbGxgH3RNoWh'}, {'OMG (feat. will.i.am)': '1bM50INir8voAkVoKuvEUI'}, {'Lord Pretty Flacko Jodye 2 (LPFJ2)': '1j6kDJttn6wbVyMaM42Nxm'}, {'Even Steven': '5E6ybeNLuVedmvD6WVMKY7'}, {'En Menos de Un Minuto': '0laoKkCyhp5HW3wGejhPV5'}, {'party favor': '3WxmlTZ85sCYFnuIXmUAEe'}, {'HOLD UP (feat. Queen Naija)': '1HBSjsCvLt4Q0e3RsfMduh'}, {'Me and Bobby McGee': '1IqFh00G2kvvMm8pRMpehA'}, {'Walked In': '252gJUec2oDsGBPcxZs4nX'}, {'Drift Away': '0RFgvrhkf9FiDRLA0BhzpZ'}, {'Like I Loved You': '1elh7SJVKWt2xpqwCLRRzG'}, {'Love U 4 Life': '02D9uD9WQb834Lb54xCvDS'}, {'Close To Me (with Diplo) (feat. Swae Lee)': '5JEx7HbmvHQQswJCsoo9rA'}, {'Que Calor (feat. J Balvin & El Alfa)': '1RKZvaLj3UPhGjZkaIrFm7'}, {'Yah Yah (feat. Royce Da 5\'9", Black Thought, Q-Tip & Denaun)': '5mZXWEH2eh8zMZGCxT5aW0'}, {'Both of Us (feat. Taylor Swift)': '3r9bgSJlJz2zlevcBRYXko'}, {'All I Want': '1v6svH1Fyx9C1nIt1mA2DT'}, {'Ignorance': '47No93LxERvV6MtOAmQzHS'}, {'Pouring Rain & Thunder': '4FO4ccOzpUP95P3sQBmbK9'}, {'Break Up In A Small Town': '7aftSOGSOpSoIlVAQVBb71'}, {'We Belong Together': '3LmvfNUQtglbTrydsdIqFU'}, {'Off Deez (with J. Cole)': '3JAeYOjyJodI4PRs44lx2l'}, {'Move Your Feet': '4jacsL77ZYnpInmTtUBaJW'}, {'Shut Up and Dance': '0kzw2tRyuL9rzipi5ntlIy'}, {'Foreword (feat. Rex Orange County)': '33i3xxHB4YSYGYbtJrwwO8'}, {'Fire Away': '5j4hSQH0KaAc8f6cimnXIT'}, {"Wolf in Sheep's Clothing (feat. William Beckett)": '4WXFDVe299Po8ih6Np54n2'}, {'I Am Moana (Song of the Ancestors)': '6uk7QQiWRDjPHSiSMZlez8'}, {'PICK IT UP (feat. A$AP Rocky)': '3ncgNpxLoBQ65ABk4djDyd'}, {'As I Am': '6hRrzZJ90DNQdEF1Wu2Mrf'}, {'Charleston Girl (Live)': '3R6yNicsZrWF8ybl02imcB'}, {'Own It (feat. Ed Sheeran & Burna Boy)': '4QPEwDdOMhY7rNS05mTyMR'}, {'S.O.S. (Sawed Off Shotgun)': '3NyovXfcpc8PDWWKH7xEDs'}, {'Can We Kiss Forever?': '58wyJLv6yH1La9NIZPl3ne'}, {'Get Lucky (feat. Pharrell Williams & Nile Rodgers) - Radio Edit': '2Foc5Q5nqNiosCNqttzHof'}, {'All Star (with Lil Tjay)': '3nQOSV5FCRsHZronrjKFJ4'}, {'BROWN SKIN GIRL': '0B3FovCVaGKS5w1FTidEUP'}, {'Zero - From the Original Motion Picture "Ralph Breaks The Internet"': '2bzitsPcImYC6DZWvvLCQi'}, {'Aston Martin Music': '5W7xC99N2Zzfh69r7I7zWK'}, {'Over Now': '09IOPhEh1OMe0HD9b36FJk'}, {'Fine China': '5274I4mUMnYczyeXkGDWZN'}, {'Always': '3SxSrUogj4LpAkLKXeTtTQ'}, {'Yamborghini High': '2rqUblDWJKlMVwh9uJc0Vv'}, {'Slide (feat. Frank Ocean & Migos)': '7tr2za8SQg2CI8EDgrdtNl'}, {'Plus tôt': '3ODEuZjfxec5fYnzVhxANv'}, {'A Dios Le Pido': '3Pf6EbLx96ZEqBkUOtHdYb'}, {'Just Imagine It': '0mtmrbRFsectINNpHdDkUQ'}, {'Safe & Sound - from The Hunger Games Soundtrack': '0z9UVN8VBHJ9HdfYsOuuNf'}, {'Stronger Than You': '3ry3QOTArZPVqduQETTX4m'}, {'Shut Up And Drive': '4QdX6pmNnJ5cleufWQIr5D'}, {"Don't Tell 'Em": '0Dc7J9VPV4eOInoxUiZrsL'}, {'Used to the Darkness': '6fLKwF2FLBtPNvtrVjYDVz'}, {"Sow'n": '6yUcPZorIU2mWye3n7CcYG'}, {'Under The Sun (with J. Cole & Lute feat. DaBaby)': '6MF4tRr5lU8qok8IKaFOBE'}, {'Mikrokosmos': '5hnbE5BF2e8BCk9OMR1UVC'}, {'Foe Tha Love of $': '1muLq1kBLWIT3pmNC2xl0g'}, {'The Downfall of Us All': '6G7URf5rGe6MvNoiTtNEP7'}, {'Every Rose Has Its Thorn - Remastered 2003': '43GS3mtezoIFiuIZCLLiDY'}, {'Cheap Thrills': '3S4px9f4lceWdKf0gWciFu'}, {'Passion': '3WbPxUvKl4DGcTRHgYWiyJ'}, {'Yessirskiii': '59JWp4PjZ9TRM8cmtaDYB1'}, {'Oh Ana': '2ag28zkxul9hTpi5ksQLRp'}, {'U Got It Bad': '7J41dYQolQJEtj3UmKLu5r'}, {'English Suite No. 4 in F Major, BWV 809: V-VI. Menuett I et II': '7G0Nl2LppVFHwRMuc53Weo'}, {'fake smile': '3wFLWP0FcIqHK1wb1CPthQ'}, {'Dirt On My Boots': '7f08qp3HROTkfrtNpiYGGo'}, {'Viola da gamba Sonata No. 1 in G Major, BWV 1027: III. Andante': '038gsZG1ObZUtFMkwIJnqH'}, {"Ain't No Mountain High Enough": '7tqhbajSfrz2F7E1Z75ASX'}, {'Time Of The Season (Mono Version)': '5AJrhrwz4oSZX2PwwV4qrN'}, {'Given Up': '1fLlRApgzxWweF1JTf8yM5'}, {'Calm Rolling Thunder and Soothing Rain': '5Y3bt7xbhZwwHfTPK5hWEg'}, {'Me and Your Mama': '31tf1qEai5o5f4r66Kd0pU'}, {'Caution - Radio Edit': '4cI2rd2D44mBjwUVFxTkUZ'}, {'Oceans Outside': '4ndb9Sv5pTIolY8Lt5jmSn'}, {'The Black and White': '6KtCRh78Hl0bgWvkruPNcs'}, {'The Art of Fugue, BWV 1080: Contrapunctus VIII (Live)': '3UG0WKP33a1htFMtIDeEMc'}, {'U Say (feat. Tyler, The Creator & Jay Prince)': '2p37Mfy2PWajgOS3i2aaep'}, {'Homecoming': '5jUvv1aTcNTgTOsAGlJojn'}, {"I Won't Say (I'm In Love)": '0PKmDncVOiNQLO6D1P6PXi'}, {'A Thousand Bad Times': '2J0NXdHr6MYvKDSxB7k3V2'}, {'Somewhere Only We Know': '0ll8uFnc0nANY35E0Lfxvg'}, {'Sweet Dreams (Are Made Of This)': '3D0bXrSv7O73vOaGOG8J9c'}, {'Other Friends (feat. Sarah Stiles, Zach Callison, Deedee Magno Hall, Estelle & Michaela Dietz)': '30z2IlXuYkWxIjtXpD9C6a'}, {'Wheel in the Sky': '215wUTQQUo2PElJFEFoB0d'}, {'We Stayed Up All Night': '7eSWgAlmLPXbGxgH3RNoWh'}, {"Chillin' It": '0Utg7sirTPqrs6Cx0FbriQ'}, {'Rolling Ocean Waves': '11Rm75lU5EmETsTR22C0gT'}, {'Angels Fall': '2D9BrlpeyjXF0vli2dYQ5V'}, {'Out My Way': '0baYVkFX4vIXXmIuHRWXDN'}, {'Another Life': '0YZEYxd1oiqZRFhnnmTKKi'}, {'Watermelon Crawl': '3Q9t1A12iUemHTAWnH7PjD'}, {'Ordinary People': '2ZA4uMlSZjaoWGFqP1tsLI'}, {"How's It Going to Be": '3Uvx1TO0Kg5HgGPk58lHXv'}, {'Suncity (feat. Empress Of)': '6SkHm6poyKfzV6kc9any8k'}, {"I Won't Say (I'm In Love)": '0PKmDncVOiNQLO6D1P6PXi'}, {'English Suite No. 5 in E Minor, BWV 810: III. Courante': '6yAbPDsksgiz8oY8kAJx7W'}]}
 
+
+# for each year get
+
+years = ['1975','1976','1977','1978','1979','1980', '1981', '1982', '1983', '1984', '2000', '2001', '2002', '2003', '2004','2005','2006','2007','2008','2009']
+tempos = []
+dancing = []
+loudness = []
+for key, value in yearlyAttributes.items() :
+    #years.append(key)
+    for i in range(90):
+        tempos.append(value[i]['response']['tempo'])
+        dancing.append(value[i]['response']['danceability'])
+        loudness.append(value[i]['response']['loudness'])
+
+
+avgTempos = []
+avgDancing = []
+avgLoudness =[]
+counter = 0
+sumt = 0
+sumd = 0
+suml = 0
+for j in range(20):
+    for k in range(90):
+        sumt = sumt + tempos[counter]
+        sumd = sumd + dancing[counter]
+        suml = suml + loudness[counter]
+        counter = counter + 1
+    avgTempos.append(sumt/90)
+    avgLoudness.append(suml/90)
+    avgDancing.append(sumd/90)
+
+    #print(sum)
+    sumt = 0
+    suml = 0
+    sumd = 0
+
+
+
+unemployment = {'1975': '8.5',
+                '1976': '7.7',
+                '1977': '7.1',
+                '1978': '6.1',
+                '1979': '5.8',
+                '1980': '7.1',
+                '1981': '7.6',
+                '1982': '9.7',
+                '1983': '9.6',
+                '1984': '7.5',
+                '2000': '4.0',
+                '2001': '4.7',
+                '2002': '5.8',
+                '2003': '6.0',
+                '2004': '5.5',
+                '2005': '5.1',
+                '2006': '4.6',
+                '2007': '4.6',
+                '2008': '5.8',
+                '2009': '9.3'}
+ind = [i for i in range(20)]
+unemploymentData = pd.DataFrame(unemployment.items(), columns=['Year', 'Unemployment'])
+
+
+
+
+
+unemploymentData['year'] = years
+unemploymentData['average tempo'] = avgTempos
+unemploymentData['avgLoudness'] = avgLoudness
+unemploymentData['avg danceability'] = avgDancing
+
+
+
+'''
+PLOT DANCEABILITY
+'''
+
+labels = years
+
+x = np.arange(len(labels))  # the label locations
+width = 0.35  # the width of the bars
+
+fig, ax = plt.subplots()
+rects1 = ax.bar(x - width/2, avgDancing, width, label='Danceability')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('Danceability ')
+ax.set_title('Average Danceability by year of Top 100 Billboard Songs ')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects1:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+
+
+fig.tight_layout()
+
+plt.show()
+
+
+
+'''
+PLOT TEMPOS
+'''
+
+labels = years
+
+x = np.arange(len(labels))  # the label locations
+width = 0.35  # the width of the bars
+
+fig, ax = plt.subplots()
+rects2 = ax.bar(x - width/2, avgTempos, width, label='tempos')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('Tempo in BPM ')
+ax.set_title('Average tempos of Billboard top 100 by year')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects2:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+
+
+fig.tight_layout()
+
+plt.show()
+
+'''
+PLOT LOUDNESS
+'''
+
+labels = years
+
+x = np.arange(len(labels))  # the label locations
+width = 0.35  # the width of the bars
+
+fig, ax = plt.subplots()
+rects3 = ax.bar(x - width/2, avgLoudness, width, label='Loudness')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('loudness in DB')
+ax.set_title('Average Loudness of Top 100 billboard song by year ')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects3:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+
+fig.tight_layout()
+
+plt.show()
+
+'''
+PLOT UNEMPLOYMENT
+'''
+labels = years
+unemp = unemploymentData['Unemployment'].tolist()
+#CapVols = unemploymentData['Tumor Volume (mm3)'].tolist()
+x = np.arange(len(labels))  # the label locations
+width = 0.35  # the width of the bars
+
+fig, ax = plt.subplots()
+rects4 = ax.bar(x - width/2, unemp, width, label='Unemployment')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('unemployment rate')
+ax.set_title('unemployment rate per year ')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects4:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+
+fig.tight_layout()
+
+plt.show()
