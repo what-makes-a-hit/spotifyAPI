@@ -16061,13 +16061,15 @@ unemploymentData = pd.DataFrame(unemployment.items(), columns=['Year', 'Unemploy
 unemp = unemploymentData['Unemployment'].tolist()
 
 
-
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
 unemploymentData['year'] = years
 unemploymentData['average tempo'] = avgTempos
 unemploymentData['avgLoudness'] = avgLoudness
 unemploymentData['avg danceability'] = avgDancing
 unemploymentData['avg Valence'] = avgValence
-
+pearsoncorr = unemploymentData.corr(method='pearson')
+print(pearsoncorr)
 
 
 '''
