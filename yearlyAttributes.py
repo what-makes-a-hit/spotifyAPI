@@ -15996,23 +15996,28 @@ years = ['1975','1976','1977','1978','1979','1980', '1981', '1982', '1983', '198
 tempos = []
 dancing = []
 loudness = []
+valence = []
 for key, value in yearlyAttributes.items() :
     #years.append(key)
     for i in range(90):
         tempos.append(value[i]['response']['tempo'])
         dancing.append(value[i]['response']['danceability'])
         loudness.append(value[i]['response']['loudness'])
+        valence.append(value[i]['response']['valence'])
 
 
 avgTempos = []
 avgDancing = []
 avgLoudness =[]
+avgValence = []
 counter = 0
 sumt = 0
 sumd = 0
 suml = 0
+sumv = 0
 for j in range(20):
     for k in range(90):
+        sumv = sumv + valence[counter]
         sumt = sumt + tempos[counter]
         sumd = sumd + dancing[counter]
         suml = suml + loudness[counter]
@@ -16020,11 +16025,13 @@ for j in range(20):
     avgTempos.append(sumt/90)
     avgLoudness.append(suml/90)
     avgDancing.append(sumd/90)
+    avgValence.append(sumv/90)
 
     #print(sum)
     sumt = 0
     suml = 0
     sumd = 0
+    sumv = 0
 
 
 
@@ -16059,6 +16066,49 @@ unemploymentData['year'] = years
 unemploymentData['average tempo'] = avgTempos
 unemploymentData['avgLoudness'] = avgLoudness
 unemploymentData['avg danceability'] = avgDancing
+unemploymentData['avg Valence'] = avgValence
+
+
+
+'''
+PLOT Valence
+'''
+
+labels = years
+
+x = np.arange(len(labels))  # the label locations
+width = 0.35  # the width of the bars
+
+fig, ax = plt.subplots()
+rects5 = ax.bar(x - width/2, avgValence, width, label='Valence')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('Valence ')
+ax.set_title('Average Valence by year of Top 100 Billboard Songs ')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
+
+
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects5:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+
+
+fig.tight_layout()
+
+plt.show()
+
+
+
 
 
 
@@ -16177,35 +16227,17 @@ plt.show()
 '''
 PLOT UNEMPLOYMENT
 '''
+
+'''
 labels = years
 unemp = unemploymentData['Unemployment'].tolist()
-#CapVols = unemploymentData['Tumor Volume (mm3)'].tolist()
-x = np.arange(len(labels))  # the label locations
-width = 0.35  # the width of the bars
 
-fig, ax = plt.subplots()
-rects4 = ax.bar(x - width/2, unemp, width, label='Unemployment')
-
-# Add some text for labels, title and custom x-axis tick labels, etc.
-ax.set_ylabel('unemployment rate')
-ax.set_title('unemployment rate per year ')
-ax.set_xticks(x)
-ax.set_xticklabels(labels)
-ax.legend()
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])
 
 
-def autolabel(rects):
-    """Attach a text label above each bar in *rects*, displaying its height."""
-    for rect in rects4:
-        height = rect.get_height()
-        ax.annotate('{}'.format(height),
-                    xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 points vertical offset
-                    textcoords="offset points",
-                    ha='center', va='bottom')
+ax.bar(years,unemp)
+plt.show() '''
 
 
 
-fig.tight_layout()
-
-plt.show()
