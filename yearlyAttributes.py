@@ -16035,30 +16035,30 @@ for j in range(20):
 
 
 
-unemployment = {'1975': '8.5',
-                '1976': '7.7',
-                '1977': '7.1',
-                '1978': '6.1',
-                '1979': '5.8',
-                '1980': '7.1',
-                '1981': '7.6',
-                '1982': '9.7',
-                '1983': '9.6',
-                '1984': '7.5',
-                '2000': '4.0',
-                '2001': '4.7',
-                '2002': '5.8',
-                '2003': '6.0',
-                '2004': '5.5',
-                '2005': '5.1',
-                '2006': '4.6',
-                '2007': '4.6',
-                '2008': '5.8',
-                '2009': '9.3'}
+unemployment = {'1975': 8.5,
+                '1976': 7.7,
+                '1977': 7.1,
+                '1978': 6.1,
+                '1979': 5.8,
+                '1980': 7.1,
+                '1981': 7.6,
+                '1982': 9.7,
+                '1983': 9.6,
+                '1984': 7.5,
+                '2000': 4.0,
+                '2001': 4.7,
+                '2002': 5.8,
+                '2003': 6.0,
+                '2004': 5.5,
+                '2005': 5.1,
+                '2006': 4.6,
+                '2007': 4.6,
+                '2008': 5.8,
+                '2009': 9.3}
 ind = [i for i in range(20)]
 unemploymentData = pd.DataFrame(unemployment.items(), columns=['Year', 'Unemployment'])
 
-
+unemp = unemploymentData['Unemployment'].tolist()
 
 
 
@@ -16224,20 +16224,43 @@ fig.tight_layout()
 
 plt.show()
 
-'''
-PLOT UNEMPLOYMENT
-'''
 
 '''
+PLOT Unemployment
+'''
+
 labels = years
-unemp = unemploymentData['Unemployment'].tolist()
 
-fig = plt.figure()
-ax = fig.add_axes([0,0,1,1])
+x = np.arange(len(labels))  # the label locations
+width = 0.35  # the width of the bars
+
+fig, ax = plt.subplots()
+rects5 = ax.bar(x - width/2, unemp, width, label='Loudness')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('unemployment level')
+ax.set_title('Unemployment for 2 ten year periods  : source BLS  ')
+ax.set_xticks(x)
+ax.set_xticklabels(labels)
+ax.legend()
 
 
-ax.bar(years,unemp)
-plt.show() '''
+def autolabel(rects):
+    """Attach a text label above each bar in *rects*, displaying its height."""
+    for rect in rects5:
+        height = rect.get_height()
+        ax.annotate('{}'.format(height),
+                    xy=(rect.get_x() + rect.get_width() / 2, height),
+                    xytext=(0, 3),  # 3 points vertical offset
+                    textcoords="offset points",
+                    ha='center', va='bottom')
+
+
+
+fig.tight_layout()
+
+plt.show()
+
 
 
 
