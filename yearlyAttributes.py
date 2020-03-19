@@ -15997,6 +15997,7 @@ tempos = []
 dancing = []
 loudness = []
 valence = []
+energy = []
 for key, value in yearlyAttributes.items() :
     #years.append(key)
     for i in range(90):
@@ -16004,34 +16005,40 @@ for key, value in yearlyAttributes.items() :
         dancing.append(value[i]['response']['danceability'])
         loudness.append(value[i]['response']['loudness'])
         valence.append(value[i]['response']['valence'])
+        energy.append(value[i]['response']['energy'])
 
 
 avgTempos = []
 avgDancing = []
 avgLoudness =[]
 avgValence = []
+avgEnergy =[]
 counter = 0
 sumt = 0
 sumd = 0
 suml = 0
 sumv = 0
+sume = 0
 for j in range(20):
     for k in range(90):
         sumv = sumv + valence[counter]
         sumt = sumt + tempos[counter]
         sumd = sumd + dancing[counter]
         suml = suml + loudness[counter]
+        sume = sume = energy[counter]
         counter = counter + 1
     avgTempos.append(sumt/90)
     avgLoudness.append(suml/90)
     avgDancing.append(sumd/90)
     avgValence.append(sumv/90)
+    avgEnergy.append(sume/90)
 
     #print(sum)
     sumt = 0
     suml = 0
     sumd = 0
     sumv = 0
+    sume = 0
 
 
 
@@ -16068,9 +16075,23 @@ unemploymentData['average tempo'] = avgTempos
 unemploymentData['avgLoudness'] = avgLoudness
 unemploymentData['avg danceability'] = avgDancing
 unemploymentData['avg Valence'] = avgValence
+unemploymentData['avg energy'] = avgEnergy
 pearsoncorr = unemploymentData.corr(method='pearson')
 print(pearsoncorr)
+import seaborn as sb
+sb.set(font_scale=.5)
 
+hm = sb.heatmap(pearsoncorr,
+            xticklabels=pearsoncorr.columns,
+            yticklabels=pearsoncorr.columns,
+            cmap='RdBu_r',
+            annot=True,
+            linewidth=0.3)
+hm.set_xticklabels(hm.get_xticklabels(), rotation = 0, fontsize = 5, ha="center", va="center")
+hm.set_yticklabels(hm.get_yticklabels(), fontsize = 5, ha="center", va="center")
+
+#plt.show()
+print(hm)
 
 '''
 PLOT Valence
