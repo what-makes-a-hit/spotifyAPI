@@ -6,6 +6,10 @@
 
 ![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/testresults.PNG)
 
+![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Danceb%20vs%20Acous_CG.png)
+
+![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Energy%20vs%20Loudness_Top100.png)
+
 ![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Figure_10.png)
 
 ![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Figure_2.png)
