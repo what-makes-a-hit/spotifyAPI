@@ -85,6 +85,8 @@ Perhaps young people prefer dance music these days.
 
 Finally we present the tempo of average tempo of a "hit song" for multiple years. 
 ![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Figure_7.png)
+
+
 It is surprisingly close to 120 bpm which equates to most peoples ability to jump up and down ( dance ) 
 
 In conclusion based on the data we decided that Danceability, energy, loudness, liveness and Acousticnness are the most important factor in a hit song. The result was limited by the fact that we couldn't find a proper random sample. We also expected that the distribution of data across all groups and the entire spotify data are not normally distributed. In the future we hope that it may be possible to create a random sample of the data. 
