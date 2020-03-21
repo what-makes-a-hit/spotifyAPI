@@ -4,7 +4,7 @@
 
 ![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/goodpearsonheatmap.png)
 
-1[alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/testresults.PNG)
+![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/testresults.PNG)
 
 
 
