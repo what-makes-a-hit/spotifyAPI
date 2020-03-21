@@ -94,6 +94,8 @@ In conclusion based on the data we decided that Danceability, energy, loudness, 
 To view all the images/plot created in this survey click here: 
 https://github.com/what-makes-a-hit/spotifyAPI/tree/master/images
 
+The "presentation" folder contains most of the code written to query the spotify API.
+
 "The Sample Guys" team 3/21/2020
 
 
