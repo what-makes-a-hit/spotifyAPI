@@ -16,5 +16,7 @@
 
 ![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Figure_8.png)
 
+![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Figure_3.png)
+
 
 
