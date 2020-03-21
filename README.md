@@ -8,5 +8,7 @@
 
 ![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Figure_10.png)
 
+![alt text](https://github.com/what-makes-a-hit/spotifyAPI/blob/master/images/Figure_2.png)
+
 
 
