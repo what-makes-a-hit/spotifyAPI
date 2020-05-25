@@ -1,5 +1,4 @@
-# spotifyAPI
-
+# SpotifyAPI
 
 We attempted to answer the question "what are the characteristics of a hit song on spotify" 
 
